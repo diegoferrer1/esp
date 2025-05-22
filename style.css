@@ -1,0 +1,110 @@
+/* Estilos Generales */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Elige una fuente que te guste */
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+    color: #ffffff; /* Color de texto por defecto para el cuerpo, si es necesario */
+}
+
+/* Contenedor del Video */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000; /* Fondo negro por si el video tarda en cargar o falla */
+}
+
+#video-fondo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Detrás de la capa de superposición y el contenido */
+}
+
+/* Capa de superposición oscura sobre el video */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Negro con 60% de opacidad. Ajusta el último valor (0.0 a 1.0) */
+    z-index: 1; /* Encima del video, debajo del texto */
+}
+
+/* Contenido Superpuesto (Texto) */
+.overlay-content {
+    position: relative; /* Relativo para que el z-index funcione correctamente con el video-overlay */
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Encima de la capa de superposición y el video */
+    padding: 20px;
+    text-align: center; /* Asegura centrado del texto en todos los casos */
+}
+
+.overlay-content h1 {
+    color: #ffffff; /* Color del texto principal */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Sombra para mejorar legibilidad, puede ser más sutil si la capa ya es oscura */
+}
+
+/* Estilos del Header */
+header.fixed-top {
+    z-index: 3; /* Asegura que el header esté sobre todo lo demás */
+    /* Puedes añadir un fondo sutil al navbar si es necesario para la legibilidad de los enlaces */
+    /* background-color: rgba(0, 0, 0, 0.2); */
+}
+
+.navbar {
+    /* Si quieres un fondo específico para la barra de navegación que no sea totalmente transparente */
+     background-color: rgba(10, 10, 10, 0.25) !important; /* Ejemplo: un negro muy sutil y transparente */
+}
+
+
+.navbar-brand img {
+    max-height: 40px;
+    /* Considera añadir un filtro si el logo no contrasta bien con todos los videos: */
+    /* filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.7)); */
+}
+
+.navbar-nav .nav-link {
+    color: #f8f9fa !important; /* Color claro para los enlaces del navbar */
+    margin-left: 15px;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Pequeña sombra para legibilidad */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #adb5bd !important;
+}
+
+/* Ajustes para el menú hamburguesa en móviles */
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+#video-fondo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    filter: brightness(40%);    /* Ajusta el brillo del video para que el texto sea más legible */
+}
